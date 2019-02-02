@@ -22,8 +22,5 @@ router.get('/contact', function(req, res, next) {
   res.render('index', { title: 'Contact' });
 });
 
-router.get('*', function(req, res, next) {
-  res.render('index', { title: 'Random Text' });
-});
 
 module.exports = router;
