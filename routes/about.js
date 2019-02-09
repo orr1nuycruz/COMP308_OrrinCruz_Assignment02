@@ -3,21 +3,20 @@ let router = express.Router();
 let mongoose = require('mongoose');
 
 // create a reference to a database schema
-// let contact = require('../models/contact');
-let contact = require('../models/things');
+let about= require('../models/things');
 
 //* GET Contact List page - READ Operation
 router.get('/', (req, res, next) =>{
-    contact.find((err, contactList)=>{
+    about.find((err, aboutList)=>{
         if(err){
             return console.error(err);
         }
         else{
-            console.log(contactList);
+            console.log(aboutList);
             
-            res.render('contacts/index',{
+            res.render('abouts/index',{
                 title: 'My Interests',
-                contactList : contactList
+                aboutList : aboutList
             });
             
         }
