@@ -11,4 +11,5 @@ let contactSchema = mongoose.Schema({
     collection: "first"
 })
 
+//model name. not a database
 module.exports = mongoose.model('test', contactSchema);
