@@ -8,7 +8,7 @@ router.get('/',  indexController.displayHomePage);
 
 router.get('/about', indexController.displayAboutPage);
 
-router.get('/products', indexController.displayProductsPage);
+router.get('/projects', indexController.displayProductsPage);
 
 router.get('/services', indexController.displayServicesPage);
 

@@ -1,14 +1,24 @@
 <% include ./partials/header.ejs %>
 
-<main class="container">
-      <!-- Main Content -->
-      <div class="jumbotron">
-        <h1 class="display-4">Welcome to <%= title %></h1>
-        <% if(title == "Contact"){%>
-        <a class="btn btn-primary" href="/contact-list" role="button">Contact List</a>
-        <a class="btn btn-primary" href="/about-list" role="button">My Interests</a>
-        <% }%>
-      </div>
-    </main>
+ <%if(title == "Home") { %>
+<% include ./Pages/home.ejs %>
+<% } %>
+
+<%if(title == "About") { %>
+<% include ./Pages/about.ejs %>
+<% } %>
+
+<%if(title == "Projects") { %>
+<% include ./Pages/projects.ejs %>
+<% } %>
+
+<%if(title == "Services") { %>
+<% include ./Pages/services.ejs %>
+<% } %>
+
+<%if(title == "Contact") { %>
+<% include ./Pages/contact.ejs %>
+<% } %>
+
 
 <% include ./partials/footer.ejs %>

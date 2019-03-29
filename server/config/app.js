@@ -19,7 +19,6 @@ console.log("Connected to MongoDB...");
 
 let indexRouter = require('../routes/index');
 let contactRouter = require('../routes/contact');
-// let aboutRouter = require('./routes/about');
 
 let app = express();
 
@@ -36,7 +35,6 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter);
 app.use('/contact-list', contactRouter);
-// app.use('/about-list', aboutRouter);
 
 
 

@@ -1,7 +1,8 @@
 <% include ../partials/header.ejs %>
 
-<div class="container">
-    <div class="row">
+<main class="container">
+      <div class="jumbotron">
+      <div class="row">
         <div class="col-mid-offset-3 col-md-9">
         <h1 ><%= title %></h1>
         <a href="/contact-list/add" class="btn btn-primary " role="button" aria-pressed="true">
@@ -14,17 +15,19 @@
                 <th class="text-centered">First Name</th>
                  <th class="text-centered">Last Name</th>
                  <th class="text-centered">Age</th>   
-                 <th class="text-centered"></th>   
-                 <th class="text-centered"></th>   
+                 <th class="text-centered">Email</th>   
+                 <th class="text-centered">Message</th>   
             </tr>
                
             <!-- Repeatable Template Row-->
             <% for(let count = 0; count < contactList.length; count++){ %>
                 <tr>
                     
-                    <td class="text-center"><%= contactList[count].firstname %></td>
-                    <td class="text-center"><%= contactList[count].lastname %></td>
+                    <td class="text-center"><%= contactList[count].firstName %></td>
+                    <td class="text-center"><%= contactList[count].lastName %></td>
                     <td class="text-center"><%= contactList[count].age %></td>
+                    <td class="text-center"><%= contactList[count].email %></td>
+                    <td class="text-center"><%= contactList[count].message %></td>
 
                     <td class="text-center">
                      <a href="/contact-list/edit/<%= contactList[count]._id %>"
@@ -39,7 +42,9 @@
          <% } %>
         </table>
     </div>
+      </div>
+    
    
-</div>    
+ </main>
 
 <% include ../partials/footer.ejs %>
