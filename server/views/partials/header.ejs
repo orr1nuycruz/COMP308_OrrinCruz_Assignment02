@@ -76,9 +76,22 @@
             <li class="nav-item">
               <% } %>
               <a class="nav-link" href="/contact"
-                ><i class="fa fa-2x fa-comments"></i> Contact</a
-              >
+                ><i class="fa fa-2x fa-comments"></i> Contact</a>
             </li>
+            
+            <% if (typeof displayName == 'string' && displayName) { %>
+              <li class="navbar-text">
+              <i class="fa fa-user" aria-hidden="true"></i> 
+              Welcome, <%= displayName %></li>
+            <li class="nav-item"><a href="/logout" class="nav-link">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              Logout</a>
+            </li>
+            <% } else {%>
+              <li class="nav-item"><a href="/login" class="nav-link">
+                <i class="fa fa-sign-in " aria-hidden="true"></i>
+                Login</a></li>
+              <%  } %>
           </ul>
         </div>
       </nav>
