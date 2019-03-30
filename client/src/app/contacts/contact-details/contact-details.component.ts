@@ -39,10 +39,10 @@ export class ContactDetailsComponent implements OnInit {
       case 'Add New Message':
       this.contactListService.addContact(this.contact).subscribe(data=>{
         if(data.success) {
-          //this.flashMessage.show(data.msg, {cssClass: 'alert-success', timeOut: 3000});
+          this.flashMessage.show(data.msg, {cssClass: 'alert-success', timeOut: 3000});
           this.router.navigate(['/contact/contact-list']);
         } else {
-         // this.flashMessage.show('Add contact fail', {cssClass: 'alert-danger', timeOut: 3000});
+          this.flashMessage.show('Add contact fail', {cssClass: 'alert-danger', timeOut: 3000});
           this.router.navigate(['/contact/contact-list']);
         }
       });
@@ -51,10 +51,10 @@ export class ContactDetailsComponent implements OnInit {
       case 'Edit Message':
       this.contactListService.editContact(this.contact).subscribe(data=>{
         if(data.success) {
-         // this.flashMessage.show(data.msg, {cssClass: 'alert-success', timeOut: 3000});
+          this.flashMessage.show(data.msg, {cssClass: 'alert-success', timeOut: 3000});
           this.router.navigate(['/contact/contact-list']);
         } else {
-         // this.flashMessage.show('Edit contact fail', {cssClass: 'alert-danger', timeOut: 3000});
+          this.flashMessage.show('Edit contact fail', {cssClass: 'alert-danger', timeOut: 3000});
           this.router.navigate(['/contact/contact-list']);
         }
       });
