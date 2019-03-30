@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-//let mongoose = require('mongoose');
+let jwt = require('jsonwebtoken');
 
 //create a reference to a database schema
 let contactModel = require('../models/contact');
@@ -11,23 +11,14 @@ module.exports.displayContactList = (req, res, next) =>{
             return console.error(err);
         }
         else{
-            console.log(contactList);
-            
-            res.render('contacts/index',{
-                title: 'Contact List',
-                contactList : contactList,
-                displayName: req.user ? req.user.displayName: ""
-            });
-            
+            res.json({success: true, msg: 'Contact List Displayed', contactList: contactList, user: req.user});
+
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('contacts/add',{
-        title: 'Add New Message',
-        displayName: req.user ? req.user.displayName: ""
-    });
+    res.json({success: true, msg: 'Add Page is Displaying'});
 }
 
 module.exports.processAddPage = (req, res, next) => {
@@ -47,15 +38,14 @@ module.exports.processAddPage = (req, res, next) => {
             res.end(err);
         }
         else{
-            // refresh the contact list
-            res.redirect('/contact-list');
+            res.json({success: true, msg: 'Message sent to Contact'});
         }
     })
 }
 
 module.exports.displayEditPage = (req, res, next) =>{
     let id = req.params.id;
-    console.log(id);
+
     contactModel.findById(id, (err, contactObject) =>{
         if(err){
             console.log(err);
@@ -63,11 +53,7 @@ module.exports.displayEditPage = (req, res, next) =>{
         }
         else{
             //show the edit page
-            res.render('contacts/edit', {
-                title: 'Edit Message',
-                contact: contactObject,
-                displayName: req.user ? req.user.displayName: ""
-            });
+            res.json({success: true, msg: 'Edit Page is Displaying', contact: contactObject});
         }
     });
 }
@@ -92,7 +78,7 @@ module.exports.processEditPage = (req, res, next) => {
         }
         else{
             //show the edit page
-            res.redirect('/contact-list');
+            res.json({success: true, msg: 'Successfully Edited Mmessage', contact: updatedContact});
         }
     });
 }
@@ -106,8 +92,7 @@ module.exports.processDelete = (req, res, next) => {
             res.end(err);
         }
         else{
-            //refresh the contact list
-            res.redirect('/contact-list');
+            res.json({success: true, msg: 'Successfully Deleted Message'});
         }
     });
 }
