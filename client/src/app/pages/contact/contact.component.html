@@ -21,7 +21,7 @@
           Go to my linkedin ---->
       </a>
       <hr class="my-4" />
-      <a class="btn btn-primary" routerLink="contact-list" role="button">Contact List</a>
+      <a *ngIf="isLoggedIn()" class="btn btn-primary" routerLink="contact-list" role="button">Contact List</a>
     </div>
 
 </div>
