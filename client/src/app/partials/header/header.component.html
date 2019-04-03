@@ -33,7 +33,7 @@
         <li class="nav-item">
           
           <a class="nav-link" routerLink="/about"
-            ><i class="fa fa-2x fa-address-book-o "></i> About</a
+            ><i class="fas fa-2x fa-address-book" aria-hidden="true"></i> About</a
           >
         </li>
 
@@ -70,12 +70,12 @@
           Welcome, {{ user.displayName }}</li>
 
         <li *ngIf="isLoggedin()" class="nav-item"><a (click)="onLogoutClick()" routerLink="/logout" class="nav-link">
-          <i class="fa fa-sign-out" aria-hidden="true"></i>
+          <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
           Logout</a>
         </li>
         
         <li *ngIf="!isLoggedin()" class="nav-item"><a routerLink="/login" class="nav-link">
-            <i class="fa fa-sign-in " aria-hidden="true"></i>
+            <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
             Login</a></li>
          
       </ul>
