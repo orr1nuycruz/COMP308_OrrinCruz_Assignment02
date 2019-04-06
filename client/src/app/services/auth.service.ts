@@ -13,7 +13,7 @@ export class AuthService {
   private authToken: any;
 
   private endpoint = 'https://comp308-orrincruz-assgn02.herokuapp.com/api/';
-  //private endpoint = 'http://localhost:3001/api/';
+  //private endpoint = 'http://localhost:3000/api/';
 
   private httpOptions = {
     headers: new HttpHeaders({
