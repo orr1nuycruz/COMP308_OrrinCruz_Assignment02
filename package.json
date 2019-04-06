@@ -1,5 +1,5 @@
 {
-  "name": "week05b-demo",
+  "name": "comp308-assgn02",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -26,7 +26,7 @@
     "passport-local-mongoose": "^5.0.1",
     "popper.js": "^1.14.7"
   },
-  "description": "Mongo and Mongoose Demo",
+  "description": "Angular and Express",
   "main": "server.js",
   "author": "Orrin Cruz",
   "license": "ISC",
@@ -47,10 +47,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/orr1nuycruz/COMP308_OrrinCruz_Lesson04B.git"
+    "url": "git+https://github.com/orr1nuycruz/COMP308_OrrinCruz_Assignment02.git"
   },
   "bugs": {
-    "url": "https://github.com/orr1nuycruz/COMP308_OrrinCruz_Lesson04B/issues"
+    "url": "https://github.com/orr1nuycruz/COMP308_OrrinCruz_Assignment02/issues"
   },
-  "homepage": "https://github.com/orr1nuycruz/COMP308_OrrinCruz_Lesson04B#readme"
+  "homepage": "https://github.com/orr1nuycruz/COMP308_OrrinCruz_Assignment02#readme"
 }
