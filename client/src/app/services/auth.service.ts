@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {JwtHelperService} from '@auth0/angular-jwt';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { User } from '../models/user';
@@ -12,8 +12,8 @@ export class AuthService {
   user: User;
   private authToken: any;
 
-  //private endpoint = 'https://comp308-lesson10b-gg.herokuapp.com/api/';
-  private endpoint = 'http://localhost:3001/api/';
+  private endpoint = 'https://comp308-orrincruz-assgn02.herokuapp.com//api/';
+  //private endpoint = 'http://localhost:3001/api/';
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -25,12 +25,11 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private jwtService: JwtHelperService)
-    {
-      this.user = new User();
-   }
+    private jwtService: JwtHelperService) {
+    this.user = new User();
+  }
 
-   public registerUser(user: User): Observable<any>{
+  public registerUser(user: User): Observable<any> {
     return this.http.post<any>(this.endpoint + 'register', user, this.httpOptions);
   }
 
@@ -45,7 +44,7 @@ export class AuthService {
     this.user = user;
   }
 
-  public logout(): Observable<any>{
+  public logout(): Observable<any> {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
